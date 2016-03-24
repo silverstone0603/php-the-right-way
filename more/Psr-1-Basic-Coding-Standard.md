@@ -8,29 +8,25 @@
 "SHOULD NOT", "RECOMMENDED", "MAY", "OPTIONAL" 라는 용어는 
 [RFC 2119](http://tools.ietf.org/html/rfc2119) 에 설명되어 있는대로 해석되어야 합니다.
 
-[PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[PSR-4 Original]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
-[PSR-4]: https://github.com/ModernPUG/php-the-right-way/blob/gh-pages/more/Psr-4-Autoloader.md
 
-
-1. Overview
+1. 개요
 -----------
 
-- Files MUST use only `<?php` and `<?=` tags.
+- 파일에서는 반드시(MUST) `<?php` 와 `<?=` 태그만 사용해야 합니다.
 
-- Files MUST use only UTF-8 without BOM for PHP code.
+- 파일에서 PHP 코드는 반드시(MUST) BOM이 없는 UTF-8 인코딩만을 사용해야 합니다.
 
-- Files SHOULD *either* declare symbols (classes, functions, constants, etc.)
-  *or* cause side-effects (e.g. generate output, change .ini settings, etc.)
-  but SHOULD NOT do both.
+- 파일에서는 심볼(클래스, 함수, 상수 등)을 정의하는 일
+  *혹은* 부수효과를 일으키는 일(출력하기, .ini 설정 변경하기 등) 중에 *하나만* 해야 
+  합니다(SHOULD). 두 가지를 모두 하면 안됩니다(SHOULD NOT).
 
-- Namespaces and classes MUST follow an "autoloading" PSR: [[PSR-0], [PSR-4] ([원문][PSR-4 Original]) ].
+- 네임스페이스와 클래스는 반드시(MUST) "자동 로딩" PSR([PSR-0], [PSR-4])에 따라야 합니다.
 
-- Class names MUST be declared in `StudlyCaps`.
+- 클래스 이름은 반드시(MUST) `StudlyCaps` 스타일로 대소문자를 사용하여 작성되어야 합니다.
 
-- Class constants MUST be declared in all upper case with underscore separators.
+- 클래스 상수는 반드시(MUST) 밑줄(언더스코어)로 구분된 대문자를 사용하여 작성되어야 합니다.
 
-- Method names MUST be declared in `camelCase`.
+- 메소드 이름은 반드시(MUST) `camelCase` 스타일로 대소문자를 사용하여 작성되어야 합니다.
 
 
 2. Files
@@ -170,3 +166,6 @@ or method-level.
 ### 4.3. Methods
 
 Method names MUST be declared in `camelCase()`.
+
+[PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+[PSR-4]: https://github.com/ModernPUG/php-the-right-way/blob/gh-pages/more/Psr-4-Autoloader.md
