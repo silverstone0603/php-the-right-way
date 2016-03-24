@@ -29,70 +29,70 @@
 - 메소드 이름은 반드시(MUST) `camelCase` 스타일로 대소문자를 사용하여 작성되어야 합니다.
 
 
-2. Files
+2. 파일
 --------
 
-### 2.1. PHP Tags
+### 2.1. PHP 태그
 
-PHP code MUST use the long `<?php ?>` tags or the short-echo `<?= ?>` tags; it
-MUST NOT use the other tag variations.
+PHP 코드는 반드시(MUST) 긴 형식의 `<?php ?>` 혹은 echo 축약형 `<?= ?>` 태그만을
+사용해서 작성되어야 합니다. 이전에 사용되었던 다른 형태의 태그를 절대 사용하면
+안됩니다(MUST NOT).
 
-### 2.2. Character Encoding
+### 2.2. 문자 인코딩
 
-PHP code MUST use only UTF-8 without BOM.
+PHP 코드는 반드시(MUST) BOM이 없는 UTF-8 만을 사용해야 합니다.
 
-### 2.3. Side Effects
+### 2.3. 부수 효과(Side Effects)
 
-A file SHOULD declare new symbols (classes, functions, constants,
-etc.) and cause no other side effects, or it SHOULD execute logic with side
-effects, but SHOULD NOT do both.
+파일은 부수 효과를 일으키지 않는 새로운 심볼(클래스, 함수, 상수 등) 정의 코드만
+포함해야 합니다(SHOULD). 혹은 심볼 정의는 없이 부수 효과를 일으키는 코드만을
+포함해야 합니다(SHOULD). 한 파일에 두 가지를 모두 넣으면 안됩니다(SHOULD NOT).
 
-The phrase "side effects" means execution of logic not directly related to
-declaring classes, functions, constants, etc., *merely from including the
-file*.
+"부수 효과"란 클래스, 함수, 상수 등을 정의하는 것과 직접 관련이 없는 로직이
+실행되는 것을 의미하는데, *단순히 다른 파일을 불러오는(include) 코드* 조차도
+부수 효과를 일으키는 코드입니다.
 
-"Side effects" include but are not limited to: generating output, explicit
-use of `require` or `include`, connecting to external services, modifying ini
-settings, emitting errors or exceptions, modifying global or static variables,
-reading from or writing to a file, and so on.
+"부수 효과"의 예시는 다음과 같지만, 이 예시외에도 더 있습니다: 출력하기, 
+`require` 나 `include`, 다른 서비스에 연결하기, ini 설정 변경하기, 에러나
+예외 발생시키기, 전역 변수 혹은 정적 변수를 변경하기, 파일을 읽고 쓰기 등.
 
-The following is an example of a file with both declarations and side effects;
-i.e, an example of what to avoid:
+아래 예제 파일은 심볼 정의와 부수 효과 일으키기를 같이 가지고 있는 것으로서,
+피해야만 하는 파일의 한 형태입니다.
 
 ```php
 <?php
-// side effect: change ini settings
+// side effect: ini 설정 변경하기
 ini_set('error_reporting', E_ALL);
 
-// side effect: loads a file
+// side effect: 파일 include 하기
 include "file.php";
 
-// side effect: generates output
+// side effect: 출력하기
 echo "<html>\n";
 
-// declaration
+// 심볼 정의
 function foo()
 {
-    // function body
+    // 함수 내용
 }
 ```
 
-The following example is of a file that contains declarations without side
-effects; i.e., an example of what to emulate:
+아래 파일 예시는 부수 효과는 없이 정의만을 담고 있는 파일로서, PSR을 잘 따르는
+예시입니다.
 
 ```php
 <?php
-// declaration
+// 심볼 정의
 function foo()
 {
-    // function body
+    // 함수 내용
 }
 
-// conditional declaration is *not* a side effect
+// *조건에 따른 심볼 정의는 부수 효과가 아님*
 if (! function_exists('bar')) {
     function bar()
     {
-        // function body
+        // 함수 내용
     }
 }
 ```
