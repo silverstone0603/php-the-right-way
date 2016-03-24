@@ -1,17 +1,16 @@
-Basic Coding Standard
+기본 코딩 표준
 =====================
 
-This section of the standard comprises what should be considered the standard
-coding elements that are required to ensure a high level of technical
-interoperability between shared PHP code.
+이 섹션에서는 PHP 코드들 사이에서 고수준의 기술적인 상호운용성을 보장하기
+위해서 고려되어야 할 코딩 표준을 다룹니다.
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119].
+이 문서에서 사용되는 "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+"SHOULD NOT", "RECOMMENDED", "MAY", "OPTIONAL" 라는 용어는 
+[RFC 2119](http://tools.ietf.org/html/rfc2119) 에 설명되어 있는대로 해석되어야 합니다.
 
-[RFC 2119]: http://www.ietf.org/rfc/rfc2119.txt
 [PSR-0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
-[PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+[PSR-4 Original]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+[PSR-4]: https://github.com/ModernPUG/php-the-right-way/blob/gh-pages/more/Psr-4-Autoloader.md
 
 
 1. Overview
@@ -25,7 +24,7 @@ interpreted as described in [RFC 2119].
   *or* cause side-effects (e.g. generate output, change .ini settings, etc.)
   but SHOULD NOT do both.
 
-- Namespaces and classes MUST follow an "autoloading" PSR: [[PSR-0], [PSR-4]].
+- Namespaces and classes MUST follow an "autoloading" PSR: [[PSR-0], [PSR-4] ([원문][PSR-4 Original]) ].
 
 - Class names MUST be declared in `StudlyCaps`.
 
