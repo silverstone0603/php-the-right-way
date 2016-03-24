@@ -118,14 +118,15 @@ blocks of code.
 
 There MUST NOT be more than one statement per line.
 
-### 2.4. Indenting
+### 2.4. 들여쓰기
 
-Code MUST use an indent of 4 spaces, and MUST NOT use tabs for indenting.
+들여쓰기는 반드시(MUST) 네 개의 공백으로 해야 합니다. 탭으로 들여쓰기를 하면
+안됩니다(MUST NOT).
 
-> N.b.: Using only spaces, and not mixing spaces with tabs, helps to avoid
-> problems with diffs, patches, history, and annotations. The use of spaces
-> also makes it easy to insert fine-grained sub-indentation for inter-line 
-> alignment.
+> Note: 들여쓰기할 때 공백만 사용하면 버전 관리(비교, 패치 만들기, 수정 이력
+> 보기 등) 작업을 할 때 문제가 덜 생깁니다. 또한 세로 방향으로 줄 맞추기(
+> 변수에 값 할당하는 코드가 여러 줄 나올때 등)에도 공백만으로 들여쓰기를 
+> 하는 편이 더 쉽습니다.
 
 ### 2.5. Keywords and True/False/Null
 
