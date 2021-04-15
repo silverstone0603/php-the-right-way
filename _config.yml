@@ -23,4 +23,4 @@ exclude: ['CNAME', 'CONTRIBUTING.md', 'LICENSE', 'README.md', 'pages/example.md'
 
 future: true
 
-theme: jekyll-theme-slate
+theme: jekyll-theme-cayman
